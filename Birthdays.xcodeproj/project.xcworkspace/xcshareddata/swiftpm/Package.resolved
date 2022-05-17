@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "HorizonCalendar",
+        "repositoryURL": "https://github.com/airbnb/HorizonCalendar.git",
+        "state": {
+          "branch": "master",
+          "revision": "93b188c52650b3999eeb20cf256b69715de515ef",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
