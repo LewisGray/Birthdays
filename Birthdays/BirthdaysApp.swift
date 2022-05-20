@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct BirthdaysApp: App {
+    
+    @StateObject var friendsViewModel: FriendsViewModel = FriendsViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(friendsViewModel)
         }
     }
 }

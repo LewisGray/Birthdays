@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED138A0E2837D65100D3A061 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED138A0D2837D65100D3A061 /* Friend.swift */; };
+		ED138A102837E94000D3A061 /* FriendListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED138A0F2837E94000D3A061 /* FriendListRowView.swift */; };
+		ED138A13283803D400D3A061 /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED138A12283803D400D3A061 /* FriendsViewModel.swift */; };
 		EDC9B39A2834282D0083424A /* BirthdaysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9B3992834282D0083424A /* BirthdaysApp.swift */; };
 		EDC9B39C2834282D0083424A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9B39B2834282D0083424A /* ContentView.swift */; };
 		EDC9B39E283428300083424A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC9B39D283428300083424A /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED138A0D2837D65100D3A061 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		ED138A0F2837E94000D3A061 /* FriendListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListRowView.swift; sourceTree = "<group>"; };
+		ED138A12283803D400D3A061 /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
 		EDC9B3962834282D0083424A /* Birthdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Birthdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC9B3992834282D0083424A /* BirthdaysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysApp.swift; sourceTree = "<group>"; };
 		EDC9B39B2834282D0083424A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,9 +48,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED138A112837F84000D3A061 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED138A0D2837D65100D3A061 /* Friend.swift */,
+				ED138A12283803D400D3A061 /* FriendsViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EDC9B38D2834282D0083424A = {
 			isa = PBXGroup;
 			children = (
+				ED138A112837F84000D3A061 /* Model */,
+				ED138A0F2837E94000D3A061 /* FriendListRowView.swift */,
 				EDC9B3B028342D870083424A /* UpcomingView.swift */,
 				EDC9B3AE28342D340083424A /* DateView.swift */,
 				EDC9B3AC28342CEC0083424A /* AddFriendView.swift */,
@@ -158,11 +175,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC9B3AF28342D340083424A /* DateView.swift in Sources */,
+				ED138A102837E94000D3A061 /* FriendListRowView.swift in Sources */,
+				ED138A0E2837D65100D3A061 /* Friend.swift in Sources */,
 				EDC9B3AB28342CB30083424A /* FriendsView.swift in Sources */,
 				EDC9B3B128342D870083424A /* UpcomingView.swift in Sources */,
 				EDC9B39C2834282D0083424A /* ContentView.swift in Sources */,
 				EDC9B3AD28342CEC0083424A /* AddFriendView.swift in Sources */,
 				EDC9B39A2834282D0083424A /* BirthdaysApp.swift in Sources */,
+				ED138A13283803D400D3A061 /* FriendsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

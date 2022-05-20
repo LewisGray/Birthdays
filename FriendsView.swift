@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct FriendsView: View {
+    @EnvironmentObject var friendsViewModel: FriendsViewModel
     var body: some View {
-        Text("Friends List goes here")
+        NavigationView{
+            List{
+                ForEach(friendsViewModel.friends){ friend in
+                FriendListRowView(friend: friend)
+                }
+                .onDelete(perform: friendsViewModel.delete)
+                .onMove(perform: friendsViewModel.move)
+            }
+        
+        .navigationTitle("Friends")
+        .navigationBarItems(leading: EditButton(), trailing: NavigationLink("Add", destination: AddFriendView()))
+        }
     }
 }
 
+
+
+
 struct FriendsView_Previews: PreviewProvider {
     static var previews: some View {
+        NavigationView{
         FriendsView()
+        }
     }
 }

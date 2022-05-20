@@ -10,32 +10,48 @@ import HorizonCalendar
 
 
 struct ContentView: View {
+    @State private var selection = 1
     var body: some View {
-        ZStack{
+        
            
-            
-            TabView{
+            TabView(selection: $selection){
+                
                 VStack{
-                    Text("Hello, world!")
+                    FriendsView()
+                    
+                }
+                .tabItem {
+                    Image(systemName: "2.square.fill")
+                    Text("Friends")
+                }
+                .tag(0)
+                
+                VStack{
+                    Text("Calendar")
                         .padding()
                     basicUIVIewRepresentable()
-            }
-                        .tabItem {
-                            Image(systemName: "1.square.fill")
-                            Text("First")
-                        }
-                    Text("Another Tab")
-                        .tabItem {
-                            Image(systemName: "2.square.fill")
-                            Text("Second")
-                        }
-                    Text("The Last Tab")
-                        .tabItem {
-                            Image(systemName: "3.square.fill")
-                            Text("Third")
-                        }
+                    
+                }
+                .tabItem {
+                    Image(systemName: "1.square.fill")
+                    Text("Calendar")
+                }
+                .tag(1)
                 
-            }
+                VStack{
+                    Text("Upcoming")
+                        .padding()
+                    UpcomingView()
+                    
+                }
+                .tabItem {
+                    Image(systemName: "2.square.fill")
+                    Text("Upcoming")
+                }
+                .tag(2)
+        
+            
+            
         }
     }
 }
