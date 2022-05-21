@@ -53,6 +53,7 @@ struct ContentView: View {
             
             
         }
+            
     }
 }
 
@@ -64,6 +65,7 @@ struct ContentView_Previews: PreviewProvider {
 struct basicUIVIewRepresentable: UIViewRepresentable {
     func makeUIView(context: Context) -> some UIView {
         let calendarView = CalendarView(initialContent: makeContent())
+        calendarView.translatesAutoresizingMaskIntoConstraints = true
         
         return calendarView
     }
@@ -76,12 +78,21 @@ struct basicUIVIewRepresentable: UIViewRepresentable {
 
 private func makeContent() -> CalendarViewContent {
   let calendar = Calendar.current
-
+    let currentDate = Date()
+    let dateComponents = Calendar.current.dateComponents([.year,.month,Calendar.Component.day], from: currentDate)
   let startDate = calendar.date(from: DateComponents(year: 2020, month: 01, day: 01))!
   let endDate = calendar.date(from: DateComponents(year: 2021, month: 12, day: 31))!
+  print(startDate)
+    print("^START")
+    print(endDate)
+    print(currentDate)
 
-  return CalendarViewContent(
-    calendar: calendar,
-    visibleDateRange: startDate...endDate,
-    monthsLayout: .vertical(options: VerticalMonthsLayoutOptions()))
+    
+      return CalendarViewContent(
+        calendar: calendar,
+        visibleDateRange: startDate...endDate,
+        monthsLayout: .vertical(options: VerticalMonthsLayoutOptions()))
+        
+        
 }
+    

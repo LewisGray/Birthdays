@@ -13,11 +13,17 @@ struct Friend:Identifiable, Codable{
     let Name: String
     let DateOfBirth: Date
     let BitAboutThem: String
+    let isPrepared: Bool
     
-    init(id: String = UUID().uuidString,Name: String, DateOfBirth: Date, BitAboutThem: String){
+    init(id: String = UUID().uuidString,Name: String, DateOfBirth: Date, BitAboutThem: String,isPrepared:Bool){
         self.id = id
         self.Name = Name
         self.DateOfBirth = DateOfBirth
         self.BitAboutThem = BitAboutThem
+        self.isPrepared = isPrepared
+    }
+    
+    func prepared()-> Friend{
+        return Friend(id: id, Name: Name, DateOfBirth: DateOfBirth, BitAboutThem: BitAboutThem, isPrepared: !isPrepared)
     }
 }

@@ -10,6 +10,10 @@
 		ED138A0E2837D65100D3A061 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED138A0D2837D65100D3A061 /* Friend.swift */; };
 		ED138A102837E94000D3A061 /* FriendListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED138A0F2837E94000D3A061 /* FriendListRowView.swift */; };
 		ED138A13283803D400D3A061 /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED138A12283803D400D3A061 /* FriendsViewModel.swift */; };
+		EDC3785428393DFF00D820D6 /* UpcomingListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3785328393DFF00D820D6 /* UpcomingListRowView.swift */; };
+		EDC3785628394F2200D820D6 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3785528394F2200D820D6 /* BirthdayView.swift */; };
+		EDC3785A28396E5800D820D6 /* BirthdayPlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3785928396E5800D820D6 /* BirthdayPlanModel.swift */; };
+		EDC3785C28396FFF00D820D6 /* BirthdayPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3785B28396FFF00D820D6 /* BirthdayPlanViewModel.swift */; };
 		EDC9B39A2834282D0083424A /* BirthdaysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9B3992834282D0083424A /* BirthdaysApp.swift */; };
 		EDC9B39C2834282D0083424A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9B39B2834282D0083424A /* ContentView.swift */; };
 		EDC9B39E283428300083424A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC9B39D283428300083424A /* Assets.xcassets */; };
@@ -25,6 +29,10 @@
 		ED138A0D2837D65100D3A061 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		ED138A0F2837E94000D3A061 /* FriendListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListRowView.swift; sourceTree = "<group>"; };
 		ED138A12283803D400D3A061 /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
+		EDC3785328393DFF00D820D6 /* UpcomingListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingListRowView.swift; sourceTree = "<group>"; };
+		EDC3785528394F2200D820D6 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
+		EDC3785928396E5800D820D6 /* BirthdayPlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayPlanModel.swift; sourceTree = "<group>"; };
+		EDC3785B28396FFF00D820D6 /* BirthdayPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayPlanViewModel.swift; sourceTree = "<group>"; };
 		EDC9B3962834282D0083424A /* Birthdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Birthdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC9B3992834282D0083424A /* BirthdaysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysApp.swift; sourceTree = "<group>"; };
 		EDC9B39B2834282D0083424A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,19 +61,38 @@
 			children = (
 				ED138A0D2837D65100D3A061 /* Friend.swift */,
 				ED138A12283803D400D3A061 /* FriendsViewModel.swift */,
+				EDC3785928396E5800D820D6 /* BirthdayPlanModel.swift */,
+				EDC3785B28396FFF00D820D6 /* BirthdayPlanViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EDC378572839695600D820D6 /* LHS */ = {
+			isa = PBXGroup;
+			children = (
+				EDC9B3AC28342CEC0083424A /* AddFriendView.swift */,
+				EDC9B3AA28342CB30083424A /* FriendsView.swift */,
+				ED138A0F2837E94000D3A061 /* FriendListRowView.swift */,
+			);
+			path = LHS;
+			sourceTree = "<group>";
+		};
+		EDC37858283969D000D820D6 /* RHS */ = {
+			isa = PBXGroup;
+			children = (
+				EDC3785528394F2200D820D6 /* BirthdayView.swift */,
+				EDC9B3B028342D870083424A /* UpcomingView.swift */,
+				EDC3785328393DFF00D820D6 /* UpcomingListRowView.swift */,
+			);
+			path = RHS;
 			sourceTree = "<group>";
 		};
 		EDC9B38D2834282D0083424A = {
 			isa = PBXGroup;
 			children = (
+				EDC37858283969D000D820D6 /* RHS */,
+				EDC378572839695600D820D6 /* LHS */,
 				ED138A112837F84000D3A061 /* Model */,
-				ED138A0F2837E94000D3A061 /* FriendListRowView.swift */,
-				EDC9B3B028342D870083424A /* UpcomingView.swift */,
-				EDC9B3AE28342D340083424A /* DateView.swift */,
-				EDC9B3AC28342CEC0083424A /* AddFriendView.swift */,
-				EDC9B3AA28342CB30083424A /* FriendsView.swift */,
 				EDC9B3982834282D0083424A /* Birthdays */,
 				EDC9B3972834282D0083424A /* Products */,
 			);
@@ -83,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				EDC9B3992834282D0083424A /* BirthdaysApp.swift */,
+				EDC9B3AE28342D340083424A /* DateView.swift */,
 				EDC9B39B2834282D0083424A /* ContentView.swift */,
 				EDC9B39D283428300083424A /* Assets.xcassets */,
 				EDC9B39F283428300083424A /* Preview Content */,
@@ -175,7 +203,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC9B3AF28342D340083424A /* DateView.swift in Sources */,
+				EDC3785A28396E5800D820D6 /* BirthdayPlanModel.swift in Sources */,
+				EDC3785428393DFF00D820D6 /* UpcomingListRowView.swift in Sources */,
+				EDC3785C28396FFF00D820D6 /* BirthdayPlanViewModel.swift in Sources */,
 				ED138A102837E94000D3A061 /* FriendListRowView.swift in Sources */,
+				EDC3785628394F2200D820D6 /* BirthdayView.swift in Sources */,
 				ED138A0E2837D65100D3A061 /* Friend.swift in Sources */,
 				EDC9B3AB28342CB30083424A /* FriendsView.swift in Sources */,
 				EDC9B3B128342D870083424A /* UpcomingView.swift in Sources */,

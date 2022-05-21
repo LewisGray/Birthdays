@@ -10,6 +10,7 @@ import SwiftUI
 struct AddFriendView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var friendsViewModel: FriendsViewModel
+    @EnvironmentObject var birthdayPlanViewModel: BirthdayPlanViewModel
     
     @State var FriendName: String = ""
     @State var DateOfBirth: Date = Date()
@@ -28,10 +29,15 @@ struct AddFriendView: View {
                     selection: $DateOfBirth,
                     displayedComponents: [.date]
                 )
+                .datePickerStyle(
+                WheelDatePickerStyle()
+                )
             TextField("Bit about them:",text:$BitAboutThem)
+                
             Button(action: SavePressed, label:{
             Text("Save")
             }
+                    
             )
         }
         .navigationTitle("✨Add a Friend✨")
@@ -40,7 +46,8 @@ struct AddFriendView: View {
     
     func SavePressed(){
         if textValidator(){
-        friendsViewModel.addFriend(Name: FriendName, DateOfBirth: DateOfBirth, BitAboutThem: BitAboutThem)
+        let newFriend = friendsViewModel.addFriend(Name: FriendName, DateOfBirth: DateOfBirth, BitAboutThem: BitAboutThem)
+        birthdayPlanViewModel.addBirthdayPlan(BirthdayPerson: newFriend)
         presentationMode.wrappedValue.dismiss()
         }
         

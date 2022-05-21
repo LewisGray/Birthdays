@@ -17,6 +17,7 @@ struct FriendsView: View {
                 }
                 .onDelete(perform: friendsViewModel.delete)
                 .onMove(perform: friendsViewModel.move)
+                
             }
         
         .navigationTitle("Friends")

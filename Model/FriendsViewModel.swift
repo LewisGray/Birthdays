@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class FriendsViewModel: ObservableObject{
     let key: String = "friend_list"
@@ -35,9 +36,22 @@ class FriendsViewModel: ObservableObject{
         friends.move(fromOffsets: from, toOffset: to)
     }
     
-    func addFriend(Name: String, DateOfBirth: Date, BitAboutThem: String){
-        let newFriend = Friend(Name: Name, DateOfBirth: DateOfBirth, BitAboutThem: BitAboutThem)
+    func addFriend(Name: String, DateOfBirth: Date, BitAboutThem: String)-> Friend{
+        let newFriend = Friend(Name: Name, DateOfBirth: DateOfBirth, BitAboutThem: BitAboutThem, isPrepared: false)
         friends.append(newFriend)
+        return newFriend
+    }
+    
+    func preparedForFriend(friend:Friend)
+    {
+        if let index = friends.firstIndex(where: {(existingFriend) -> Bool in
+            return existingFriend.id==friend.id
+            
+        }){
+            //Run this
+            friends[index] = friend.prepared()
+        }
+        
     }
     
     //Update Function
