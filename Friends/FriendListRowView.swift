@@ -15,6 +15,7 @@ struct FriendListRowView: View{
         HStack{
             Image(systemName: "checkmark.circle")
             Text(friend.Name)
+            Text("Age:\(friend.Age)")
             Spacer()
             
         }

@@ -37,29 +37,42 @@ class FriendsViewModel: ObservableObject{
     }
     
     func addFriend(Name: String, DateOfBirth: Date, BitAboutThem: String)-> Friend{
-        let newFriend = Friend(Name: Name, DateOfBirth: DateOfBirth, BitAboutThem: BitAboutThem, isPrepared: false)
+        let newFriend = Friend(Name: Name, DateOfBirth: DateOfBirth, BitAboutThem: BitAboutThem, Age: calcAge(birthday: DateOfBirth))
         friends.append(newFriend)
         return newFriend
     }
     
-    func preparedForFriend(friend:Friend)
+    func editFriend(friend:Friend, Name: String, DateOfBirth: Date, BitAboutThem: String)-> Friend
     {
         if let index = friends.firstIndex(where: {(existingFriend) -> Bool in
             return existingFriend.id==friend.id
             
         }){
             //Run this
-            friends[index] = friend.prepared()
-        }
-        
+            friends[index] = Friend(Name: Name, DateOfBirth: DateOfBirth, BitAboutThem: BitAboutThem, Age: calcAge(birthday: DateOfBirth))
+            return friends[index]
+                    }
+        //This should never happen
+        return friends[0]
     }
     
     //Update Function
-    
     func saveFriendList(){
         if let encodedData = try? JSONEncoder().encode(friends){
             UserDefaults.standard.set(encodedData, forKey: key )
         }
+    }
+    
+    
+    func calcAge(birthday: Date) -> Int {
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "MM/dd/yyyy"
+        let birthdayDate = birthday
+        let calendar: NSCalendar! = NSCalendar(calendarIdentifier: .gregorian)
+        let now = Date()
+        let calcAge = calendar.components(.year, from: birthdayDate, to: now, options: [])
+        let age = calcAge.year
+        return age!
     }
     
 }

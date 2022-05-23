@@ -42,7 +42,17 @@ class BirthdayPlanViewModel: ObservableObject{
     }
     
     
-    //Update Function
+   
+    func updateFriend(friend:Friend,updatedFriend:Friend){
+        if let index = plans.firstIndex(where: {(existingPlan) -> Bool in
+            return existingPlan.BirthdayPerson.id == friend.id
+            
+        }){
+            //Run this
+            plans[index].BirthdayPerson = updatedFriend
+        }
+    }
+    
     
     func findPlan(friend:Friend)-> BirthdayPlan
     {

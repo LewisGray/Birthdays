@@ -9,13 +9,21 @@ import SwiftUI
 
 struct BirthdayView: View {
     @State var planOfAction: String = ""
+    @State var cardSorted: Bool = false
+    @State var giftSorted: Bool = false
     
     let birthdayPlan : BirthdayPlan
     var body: some View {
         VStack{
-            Text("🎊 \(birthdayPlan.BirthdayPerson.Name)'s birthday! 🎊")
-            TextField("Plan:",text: $planOfAction)
+            Text("🎊 \(birthdayPlan.BirthdayPerson.Name)'s \(birthdayPlan.BirthdayPerson.Age+1) birthday! 🎊")
+            Spacer()
+            Spacer()
             Text("\(getBirthDay(BirthdayPerson:birthdayPlan.BirthdayPerson))")
+            Spacer()
+            Text("Celebratory plans:")
+                .underline()
+            TextEditor(text: $planOfAction)
+            
             
         }
     }

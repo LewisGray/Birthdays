@@ -12,7 +12,7 @@ import SwiftUI
 
 struct BirthdayPlan:Identifiable, Codable{
     let id: String
-    let BirthdayPerson: Friend
+    var BirthdayPerson: Friend
     let Plan: String
     let Card_Bought: Bool
     let Present_Bought: Bool

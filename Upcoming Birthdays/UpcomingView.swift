@@ -13,19 +13,21 @@ struct UpcomingView: View {
     var body: some View {
         let upcomingList = sortList(upcomingList:birthdayPlanViewModel.plans)
         NavigationView{
+            
         List{
             ForEach(upcomingList){ plan in
                 NavigationLink(destination: BirthdayView(birthdayPlan: plan)){
                     UpcomingListRowView(plan: plan )
-                    .onTapGesture {
-                        withAnimation(.linear){
-                        }
-                        
-                    }
+                    
                 }
+                
                 }
             }
+        .navigationTitle("🎉 Upcoming! 🎉")
+            Spacer()
+            
         }
+        
 }
     func sortList(upcomingList: [BirthdayPlan] )-> [BirthdayPlan]{
         let upcomingList = upcomingList.sorted(by: {

@@ -16,8 +16,6 @@ struct UpcomingListRowView: View{
             
             Text(plan.BirthdayPerson.Name)
             Text(plan.BirthdayPerson.DateOfBirth, style: .date)
-            Image(systemName: plan.BirthdayPerson.isPrepared ? "checkmark.circle" : "circle")
-                .foregroundColor(plan.BirthdayPerson.isPrepared ? .blue : .red)
             Spacer()
             
         }

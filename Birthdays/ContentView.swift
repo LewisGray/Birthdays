@@ -10,7 +10,9 @@ import HorizonCalendar
 
 
 struct ContentView: View {
-    @State private var selection = 1
+    @State private var selection = 2
+    let numTabs = 4
+    let minDragTranslationForSwipe: CGFloat = 50
     var body: some View {
         
            
@@ -21,26 +23,17 @@ struct ContentView: View {
                     
                 }
                 .tabItem {
-                    Image(systemName: "2.square.fill")
+                    Image(systemName: "1.square.fill")
                     Text("Friends")
                 }
-                .tag(0)
-                
-                VStack{
-                    Text("Calendar")
-                        .padding()
-                    basicUIVIewRepresentable()
-                    
-                }
-                .tabItem {
-                    Image(systemName: "1.square.fill")
-                    Text("Calendar")
-                }
                 .tag(1)
+                .gesture(DragGesture().onEnded({
+                                 self.handleSwipe(translation: $0.translation.width)
+                             }))
+                
+                
                 
                 VStack{
-                    Text("Upcoming")
-                        .padding()
                     UpcomingView()
                     
                 }
@@ -49,12 +42,38 @@ struct ContentView: View {
                     Text("Upcoming")
                 }
                 .tag(2)
+                .gesture(DragGesture().onEnded({
+                                 self.handleSwipe(translation: $0.translation.width)
+                             }))
         
-            
+                VStack{
+                    Text("Work In Progress")
+                        .padding()
+                    basicUIVIewRepresentable()
+                    
+                }
+                
+                .tabItem {
+                    Image(systemName: "3.square.fill")
+                    Text("Calendar")
+                }
+                .tag(3)
+                .gesture(DragGesture().onEnded({
+                                 self.handleSwipe(translation: $0.translation.width)
+                             }))
+                
             
         }
             
     }
+    private func handleSwipe(translation: CGFloat) {
+            if translation > minDragTranslationForSwipe && selection > 0 {
+                selection -= 1
+            } else  if translation < -minDragTranslationForSwipe && selection < numTabs-1 {
+                selection += 1
+            }
+        }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

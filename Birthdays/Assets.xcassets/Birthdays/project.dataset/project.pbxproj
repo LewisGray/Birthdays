@@ -10,7 +10,6 @@
 		ED138A0E2837D65100D3A061 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED138A0D2837D65100D3A061 /* Friend.swift */; };
 		ED138A102837E94000D3A061 /* FriendListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED138A0F2837E94000D3A061 /* FriendListRowView.swift */; };
 		ED138A13283803D400D3A061 /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED138A12283803D400D3A061 /* FriendsViewModel.swift */; };
-		ED814B8B283C0A3900363B52 /* EditFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED814B8A283C0A3900363B52 /* EditFriend.swift */; };
 		EDC3785428393DFF00D820D6 /* UpcomingListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3785328393DFF00D820D6 /* UpcomingListRowView.swift */; };
 		EDC3785628394F2200D820D6 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3785528394F2200D820D6 /* BirthdayView.swift */; };
 		EDC3785A28396E5800D820D6 /* BirthdayPlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3785928396E5800D820D6 /* BirthdayPlanModel.swift */; };
@@ -30,7 +29,6 @@
 		ED138A0D2837D65100D3A061 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		ED138A0F2837E94000D3A061 /* FriendListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListRowView.swift; sourceTree = "<group>"; };
 		ED138A12283803D400D3A061 /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
-		ED814B8A283C0A3900363B52 /* EditFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFriend.swift; sourceTree = "<group>"; };
 		EDC3785328393DFF00D820D6 /* UpcomingListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingListRowView.swift; sourceTree = "<group>"; };
 		EDC3785528394F2200D820D6 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
 		EDC3785928396E5800D820D6 /* BirthdayPlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayPlanModel.swift; sourceTree = "<group>"; };
@@ -69,32 +67,31 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		EDC378572839695600D820D6 /* Friends */ = {
+		EDC378572839695600D820D6 /* LHS */ = {
 			isa = PBXGroup;
 			children = (
 				EDC9B3AC28342CEC0083424A /* AddFriendView.swift */,
 				EDC9B3AA28342CB30083424A /* FriendsView.swift */,
 				ED138A0F2837E94000D3A061 /* FriendListRowView.swift */,
-				ED814B8A283C0A3900363B52 /* EditFriend.swift */,
 			);
-			path = Friends;
+			path = LHS;
 			sourceTree = "<group>";
 		};
-		EDC37858283969D000D820D6 /* Upcoming Birthdays */ = {
+		EDC37858283969D000D820D6 /* RHS */ = {
 			isa = PBXGroup;
 			children = (
 				EDC3785528394F2200D820D6 /* BirthdayView.swift */,
 				EDC9B3B028342D870083424A /* UpcomingView.swift */,
 				EDC3785328393DFF00D820D6 /* UpcomingListRowView.swift */,
 			);
-			path = "Upcoming Birthdays";
+			path = RHS;
 			sourceTree = "<group>";
 		};
 		EDC9B38D2834282D0083424A = {
 			isa = PBXGroup;
 			children = (
-				EDC37858283969D000D820D6 /* Upcoming Birthdays */,
-				EDC378572839695600D820D6 /* Friends */,
+				EDC37858283969D000D820D6 /* RHS */,
+				EDC378572839695600D820D6 /* LHS */,
 				ED138A112837F84000D3A061 /* Model */,
 				EDC9B3982834282D0083424A /* Birthdays */,
 				EDC9B3972834282D0083424A /* Products */,
@@ -206,7 +203,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC9B3AF28342D340083424A /* DateView.swift in Sources */,
-				ED814B8B283C0A3900363B52 /* EditFriend.swift in Sources */,
 				EDC3785A28396E5800D820D6 /* BirthdayPlanModel.swift in Sources */,
 				EDC3785428393DFF00D820D6 /* UpcomingListRowView.swift in Sources */,
 				EDC3785C28396FFF00D820D6 /* BirthdayPlanViewModel.swift in Sources */,
