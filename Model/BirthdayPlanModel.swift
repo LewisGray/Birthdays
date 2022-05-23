@@ -13,10 +13,10 @@ import SwiftUI
 struct BirthdayPlan:Identifiable, Codable{
     let id: String
     var BirthdayPerson: Friend
-    let Plan: String
-    let Card_Bought: Bool
-    let Present_Bought: Bool
-    let isPrepared:String
+    var Plan: String
+    var Card_Bought: Bool
+    var Present_Bought: Bool
+    var isPrepared:String
     
     init(id: String = UUID().uuidString,BirthdayPerson: Friend, Plan: String, Card_Bought: Bool,Present_Bought:Bool){
         self.id = id

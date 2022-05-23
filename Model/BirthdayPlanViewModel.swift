@@ -75,6 +75,33 @@ class BirthdayPlanViewModel: ObservableObject{
     
     
     
+    
+    func savePlan(plan: BirthdayPlan ,planOfAction: String,cardSorted:Bool,giftSorted:Bool)
+    {
+        if let index = plans.firstIndex(where: {(existingPlan) -> Bool in
+            return existingPlan.id == plan.id
+            
+        }){
+            //Run this
+            plans[index].Plan = planOfAction
+            plans[index].Card_Bought = cardSorted
+            plans[index].Present_Bought = giftSorted
+            if plans[index].Card_Bought == true && plans[index].Present_Bought == true {
+                plans[index].isPrepared = "Prepared"
+            }
+            else if plans[index].Card_Bought == true || plans[index].Present_Bought == true{
+                plans[index].isPrepared = "Semi-prepared"
+            }
+            else{
+                plans[index].isPrepared = "Unprepared"
+            }
+        }
+    }
+    
+    
+    
+    
+    
     func findPlan(friend:Friend)-> BirthdayPlan
     {
         if let index = plans.firstIndex(where: {(existingPlan) -> Bool in

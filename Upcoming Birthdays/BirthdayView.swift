@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct BirthdayView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var birthdayPlanViewModel: BirthdayPlanViewModel
     @State var planOfAction: String = ""
     @State var cardSorted: Bool = false
     @State var giftSorted: Bool = false
@@ -20,10 +22,35 @@ struct BirthdayView: View {
             Spacer()
             Text("\(getBirthDay(BirthdayPerson:birthdayPlan.BirthdayPerson))")
             Spacer()
+            
+            
+            Toggle(isOn: $cardSorted){
+                     Text("Card?")
+                        .font(.subheadline)
+                       
+                  }
+            .onAppear(){
+                cardSorted = birthdayPlan.Card_Bought
+            }
+            Toggle(isOn: $giftSorted){
+                     Text("Gift?")
+                        .font(.subheadline)
+                        
+                  }
+            .onAppear(){
+                giftSorted = birthdayPlan.Present_Bought
+            }
             Text("Celebratory plans:")
                 .underline()
             TextEditor(text: $planOfAction)
+                .onAppear(){
+                    planOfAction = birthdayPlan.Plan
+                }
             
+            Button(action: SavePressed, label:{
+            Text("Save")
+            })
+                .offset(y:-20)
             
         }
     }
@@ -36,5 +63,12 @@ struct BirthdayView: View {
         
         
     }
-}
+    
+    func SavePressed(){
+        birthdayPlanViewModel.savePlan(plan: birthdayPlan,planOfAction:planOfAction,cardSorted:cardSorted,giftSorted:giftSorted)
+        presentationMode.wrappedValue.dismiss()
+        }
+        
+    }
+
 

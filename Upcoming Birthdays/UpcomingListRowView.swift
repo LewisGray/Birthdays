@@ -16,6 +16,7 @@ struct UpcomingListRowView: View{
             
             Text(plan.BirthdayPerson.Name)
             Text(plan.BirthdayPerson.DateOfBirth, style: .date)
+            Text(plan.isPrepared)
             Spacer()
             
         }

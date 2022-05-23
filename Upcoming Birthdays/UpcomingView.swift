@@ -20,7 +20,9 @@ struct UpcomingView: View {
                     
                 }
                 
+                
                 }
+            
             }
         .navigationTitle("🎉 Upcoming! 🎉")
             Spacer()
