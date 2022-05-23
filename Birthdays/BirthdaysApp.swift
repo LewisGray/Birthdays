@@ -10,12 +10,10 @@ import SwiftUI
 @main
 struct BirthdaysApp: App {
     
-    @StateObject var friendsViewModel: FriendsViewModel = FriendsViewModel()
     @StateObject var birthdayPlanViewModel: BirthdayPlanViewModel = BirthdayPlanViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(friendsViewModel)
                 .environmentObject(birthdayPlanViewModel)
         }
     }

@@ -41,6 +41,11 @@ class BirthdayPlanViewModel: ObservableObject{
         plans.append(newPlan)
     }
     
+    func makeFriend(Name: String, DateOfBirth: Date, BitAboutThem: String)-> Friend{
+        let newFriend = Friend(Name: Name, DateOfBirth: DateOfBirth, BitAboutThem: BitAboutThem, Age: calcAge(birthday: DateOfBirth))
+        return newFriend
+    }
+    
     
    
     func updateFriend(friend:Friend,updatedFriend:Friend){
@@ -52,6 +57,22 @@ class BirthdayPlanViewModel: ObservableObject{
             plans[index].BirthdayPerson = updatedFriend
         }
     }
+    
+//    func editFriend(friend:Friend, Name: String, DateOfBirth: Date, BitAboutThem: String)-> Friend
+//    {
+//        if let index = plans.firstIndex(where: {(existingFriend) -> Bool in
+//            return existingFriend.id==friend.id
+//            
+//        }){
+//            //Run this
+//            plans[index].BirthdayPerson = Friend(Name: Name, DateOfBirth: DateOfBirth, BitAboutThem: BitAboutThem, Age: calcAge(birthday: DateOfBirth))
+//            return plans[index].BirthdayPerson
+//                    }
+//        //This should never happen
+//        return plans[0].BirthdayPerson
+//    }
+    
+    
     
     
     func findPlan(friend:Friend)-> BirthdayPlan
@@ -72,6 +93,19 @@ class BirthdayPlanViewModel: ObservableObject{
         if let encodedData = try? JSONEncoder().encode(plans){
             UserDefaults.standard.set(encodedData, forKey: key )
         }
+    }
+    
+    
+    
+    func calcAge(birthday: Date) -> Int {
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "MM/dd/yyyy"
+        let birthdayDate = birthday
+        let calendar: NSCalendar! = NSCalendar(calendarIdentifier: .gregorian)
+        let now = Date()
+        let calcAge = calendar.components(.year, from: birthdayDate, to: now, options: [])
+        let age = calcAge.year
+        return age!
     }
     
 }

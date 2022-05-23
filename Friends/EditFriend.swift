@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EditFriendView: View {
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var friendsViewModel: FriendsViewModel
+
     @EnvironmentObject var birthdayPlanViewModel: BirthdayPlanViewModel
     
     @State var FriendName: String = ""
@@ -56,7 +56,7 @@ struct EditFriendView: View {
     
     func SavePressed(){
         if textValidator(){
-            let updatedFriend = friendsViewModel.editFriend(friend:friend, Name: FriendName, DateOfBirth: DateOfBirth, BitAboutThem: BitAboutThem)
+            let updatedFriend = birthdayPlanViewModel.makeFriend(Name: FriendName, DateOfBirth: DateOfBirth, BitAboutThem: BitAboutThem)
             birthdayPlanViewModel.updateFriend(friend:friend,updatedFriend:updatedFriend)
         presentationMode.wrappedValue.dismiss()
         }

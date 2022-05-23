@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct FriendsView: View {
-    @EnvironmentObject var friendsViewModel: FriendsViewModel
+    @EnvironmentObject var birthdayPlanViewModel: BirthdayPlanViewModel
     var body: some View {
         NavigationView{
             
             ZStack {
                 List{
                     
-                    ForEach(friendsViewModel.friends){ friend in
-                    NavigationLink(destination: EditFriendView(friend: friend)){
-                    FriendListRowView(friend: friend)
+                    ForEach(birthdayPlanViewModel.plans){ plan in
+                        NavigationLink(destination: EditFriendView(friend: plan.BirthdayPerson)){
+                            FriendListRowView(friend: plan.BirthdayPerson)
                     
                     
                     
                     }
                     }
-                    .onDelete(perform: friendsViewModel.delete)
-                    .onMove(perform: friendsViewModel.move)
+                    .onDelete(perform: birthdayPlanViewModel.delete)
+                    .onMove(perform: birthdayPlanViewModel.move)
                 }
             
             .navigationTitle("Friends")

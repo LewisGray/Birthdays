@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct UpcomingView: View {
-    @EnvironmentObject var friendsViewModel: FriendsViewModel
     @EnvironmentObject var birthdayPlanViewModel: BirthdayPlanViewModel
     var body: some View {
         let upcomingList = sortList(upcomingList:birthdayPlanViewModel.plans)
