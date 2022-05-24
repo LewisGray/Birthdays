@@ -20,6 +20,7 @@ struct UpcomingListRowView: View{
             Spacer()
             
         }
+        Text("\(plan.daysUntil)")
         
     }
 }

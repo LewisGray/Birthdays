@@ -10,8 +10,8 @@ import HorizonCalendar
 
 
 struct ContentView: View {
-    @State private var selection = 2
-    let numTabs = 4
+    @State private var selection = 1
+    let numTabs = 3
     let minDragTranslationForSwipe: CGFloat = 50
     var body: some View {
         
@@ -19,14 +19,17 @@ struct ContentView: View {
             TabView(selection: $selection){
                 
                 VStack{
-                    FriendsView()
+                    Text("Push notification testing")
+                        .padding()
+                    Notifications()
                     
                 }
+                
                 .tabItem {
-                    Image(systemName: "1.square.fill")
-                    Text("Friends")
+                    Image(systemName: "3.square.fill")
+                    Text("Notification Tests")
                 }
-                .tag(1)
+                .tag(0)
                 .gesture(DragGesture().onEnded({
                                  self.handleSwipe(translation: $0.translation.width)
                              }))
@@ -41,27 +44,24 @@ struct ContentView: View {
                     Image(systemName: "2.square.fill")
                     Text("Upcoming")
                 }
-                .tag(2)
+                .tag(1)
                 .gesture(DragGesture().onEnded({
                                  self.handleSwipe(translation: $0.translation.width)
                              }))
         
+                
                 VStack{
-                    Text("Work In Progress")
-                        .padding()
-                    basicUIVIewRepresentable()
+                    FriendsView()
                     
                 }
-                
                 .tabItem {
-                    Image(systemName: "3.square.fill")
-                    Text("Calendar")
+                    Image(systemName: "1.square.fill")
+                    Text("Friends")
                 }
-                .tag(3)
+                .tag(2)
                 .gesture(DragGesture().onEnded({
                                  self.handleSwipe(translation: $0.translation.width)
                              }))
-                
             
         }
             
@@ -72,6 +72,7 @@ struct ContentView: View {
             } else  if translation < -minDragTranslationForSwipe && selection < numTabs-1 {
                 selection += 1
             }
+        print(selection)
         }
     
 }
@@ -81,37 +82,37 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-struct basicUIVIewRepresentable: UIViewRepresentable {
-    func makeUIView(context: Context) -> some UIView {
-        let calendarView = CalendarView(initialContent: makeContent())
-        calendarView.translatesAutoresizingMaskIntoConstraints = true
-        
-        return calendarView
-    }
-    
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-        
-    }
-    
-}
-
-private func makeContent() -> CalendarViewContent {
-  let calendar = Calendar.current
-    let currentDate = Date()
-    let dateComponents = Calendar.current.dateComponents([.year,.month,Calendar.Component.day], from: currentDate)
-  let startDate = calendar.date(from: DateComponents(year: 2020, month: 01, day: 01))!
-  let endDate = calendar.date(from: DateComponents(year: 2021, month: 12, day: 31))!
-  print(startDate)
-    print("^START")
-    print(endDate)
-    print(currentDate)
-
-    
-      return CalendarViewContent(
-        calendar: calendar,
-        visibleDateRange: startDate...endDate,
-        monthsLayout: .vertical(options: VerticalMonthsLayoutOptions()))
-        
-        
-}
+//struct basicUIVIewRepresentable: UIViewRepresentable {
+//    func makeUIView(context: Context) -> some UIView {
+//        let calendarView = CalendarView(initialContent: makeContent())
+//        calendarView.translatesAutoresizingMaskIntoConstraints = true
+//        
+//        return calendarView
+//    }
+//    
+//    func updateUIView(_ uiView: UIViewType, context: Context) {
+//        
+//    }
+//    
+//}
+//
+//private func makeContent() -> CalendarViewContent {
+//  let calendar = Calendar.current
+//    let currentDate = Date()
+//    let dateComponents = Calendar.current.dateComponents([.year,.month,Calendar.Component.day], from: currentDate)
+//  let startDate = calendar.date(from: DateComponents(year: 2020, month: 01, day: 01))!
+//  let endDate = calendar.date(from: DateComponents(year: 2021, month: 12, day: 31))!
+//  print(startDate)
+//    print("^START")
+//    print(endDate)
+//    print(currentDate)
+//
+//    
+//      return CalendarViewContent(
+//        calendar: calendar,
+//        visibleDateRange: startDate...endDate,
+//        monthsLayout: .vertical(options: VerticalMonthsLayoutOptions()))
+//        
+//        
+//}
     

@@ -17,6 +17,14 @@ struct BirthdayPlan:Identifiable, Codable{
     var Card_Bought: Bool
     var Present_Bought: Bool
     var isPrepared:String
+    var daysUntil:Int
+    
+    
+    mutating func updateDaysUntil(days:Int){
+        daysUntil = days
+        
+        
+    }
     
     init(id: String = UUID().uuidString,BirthdayPerson: Friend, Plan: String, Card_Bought: Bool,Present_Bought:Bool){
         self.id = id
@@ -24,8 +32,9 @@ struct BirthdayPlan:Identifiable, Codable{
         self.Plan = Plan
         self.Card_Bought = Card_Bought
         self.Present_Bought = Present_Bought
-        self.isPrepared = "No"
-    }
+        self.isPrepared = "Unprepared"
+        self.daysUntil = 0
     
+    }
     
 }

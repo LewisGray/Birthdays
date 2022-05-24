@@ -45,20 +45,29 @@ struct AddFriendView: View {
     
     func SavePressed(){
         if textValidator(){
+            if dateValidator(){
         let newFriend = birthdayPlanViewModel.makeFriend(Name: FriendName, DateOfBirth: DateOfBirth, BitAboutThem: BitAboutThem)
         birthdayPlanViewModel.addBirthdayPlan(BirthdayPerson: newFriend)
         presentationMode.wrappedValue.dismiss()
         }
-        
+        }
     }
     
     func getAlert() -> Alert{
         return Alert(title:Text(alertText))
     }
+    func dateValidator() -> Bool {
+        if DateOfBirth > Date(){
+                alertText = "Please enter a date before today"
+                showAlert.toggle()
+                return false
+        }
+        return true
+    }
     
     func textValidator() -> Bool {
         if FriendName.count == 0{
-            alertText = "Name is too short"
+            alertText = "Please enter a name"
             showAlert.toggle()
             return false
         }

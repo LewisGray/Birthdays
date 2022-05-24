@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED138A0E2837D65100D3A061 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED138A0D2837D65100D3A061 /* Friend.swift */; };
 		ED138A102837E94000D3A061 /* FriendListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED138A0F2837E94000D3A061 /* FriendListRowView.swift */; };
+		ED770E9D283D04D900D5DCB9 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED770E9C283D04D900D5DCB9 /* Notifications.swift */; };
 		ED814B8B283C0A3900363B52 /* EditFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED814B8A283C0A3900363B52 /* EditFriend.swift */; };
 		EDC3785428393DFF00D820D6 /* UpcomingListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3785328393DFF00D820D6 /* UpcomingListRowView.swift */; };
 		EDC3785628394F2200D820D6 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3785528394F2200D820D6 /* BirthdayView.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		ED138A0D2837D65100D3A061 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		ED138A0F2837E94000D3A061 /* FriendListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListRowView.swift; sourceTree = "<group>"; };
+		ED770E9C283D04D900D5DCB9 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		ED814B8A283C0A3900363B52 /* EditFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFriend.swift; sourceTree = "<group>"; };
 		EDC3785328393DFF00D820D6 /* UpcomingListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingListRowView.swift; sourceTree = "<group>"; };
 		EDC3785528394F2200D820D6 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		EDC9B38D2834282D0083424A = {
 			isa = PBXGroup;
 			children = (
+				ED770E9C283D04D900D5DCB9 /* Notifications.swift */,
 				EDC37858283969D000D820D6 /* Upcoming Birthdays */,
 				EDC378572839695600D820D6 /* Friends */,
 				ED138A112837F84000D3A061 /* Model */,
@@ -210,6 +213,7 @@
 				ED138A102837E94000D3A061 /* FriendListRowView.swift in Sources */,
 				EDC3785628394F2200D820D6 /* BirthdayView.swift in Sources */,
 				ED138A0E2837D65100D3A061 /* Friend.swift in Sources */,
+				ED770E9D283D04D900D5DCB9 /* Notifications.swift in Sources */,
 				EDC9B3AB28342CB30083424A /* FriendsView.swift in Sources */,
 				EDC9B3B128342D870083424A /* UpcomingView.swift in Sources */,
 				EDC9B39C2834282D0083424A /* ContentView.swift in Sources */,

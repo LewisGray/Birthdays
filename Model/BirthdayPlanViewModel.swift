@@ -38,6 +38,12 @@ class BirthdayPlanViewModel: ObservableObject{
     
     func addBirthdayPlan(BirthdayPerson: Friend){
         let newPlan = BirthdayPlan(BirthdayPerson: BirthdayPerson, Plan:"", Card_Bought: false, Present_Bought: false)
+        //Setting up Notifications
+        NotificationManager.instance.scheduleBirthdayNotification(friend:BirthdayPerson)
+        NotificationManager.instance.scheduleBirthdayNotification(friend:BirthdayPerson)
+        NotificationManager.instance.scheduleBirthdayNotification(friend:BirthdayPerson)
+        NotificationManager.instance.scheduleBirthdayNotification(friend:BirthdayPerson)
+        
         plans.append(newPlan)
     }
     
@@ -135,5 +141,17 @@ class BirthdayPlanViewModel: ObservableObject{
         return age!
     }
     
+    func updateDaysUntil(plan:BirthdayPlan, daysRemaining:Int)
+        {
+            if let index = plans.firstIndex(where: {(existingPlan) -> Bool in
+                return existingPlan.id == plan.id
+                
+            }){
+                //Run this
+                return plans[index].updateDaysUntil(days: daysRemaining)
+            }
+        }
+        
+    
+    
 }
-
