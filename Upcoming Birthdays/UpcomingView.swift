@@ -30,7 +30,7 @@ struct UpcomingView: View {
             calculateDaysUntil(upcomingList:birthdayPlanViewModel.plans)
             
         }
-        .navigationTitle("🎉 Upcoming! 🎉")
+        .navigationBarTitle("🎉 Upcoming! 🎉",displayMode: .inline)
             Spacer()
             
         }

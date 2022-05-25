@@ -32,7 +32,7 @@ struct BirthdayPlan:Identifiable, Codable{
         self.Plan = Plan
         self.Card_Bought = Card_Bought
         self.Present_Bought = Present_Bought
-        self.isPrepared = "Unprepared"
+        self.isPrepared = "💔"
         self.daysUntil = 0
     
     }

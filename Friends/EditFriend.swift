@@ -50,7 +50,7 @@ struct EditFriendView: View {
                     
             )
         }
-        .navigationTitle("✨Add a Friend✨")
+        .navigationBarTitle("✨Edit a Friend✨",displayMode: .inline)
         .alert(isPresented: $showAlert, content: getAlert)
     }
     

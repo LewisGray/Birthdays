@@ -93,13 +93,13 @@ class BirthdayPlanViewModel: ObservableObject{
             plans[index].Card_Bought = cardSorted
             plans[index].Present_Bought = giftSorted
             if plans[index].Card_Bought == true && plans[index].Present_Bought == true {
-                plans[index].isPrepared = "Prepared"
+                plans[index].isPrepared = "💚"
             }
             else if plans[index].Card_Bought == true || plans[index].Present_Bought == true{
-                plans[index].isPrepared = "Semi-prepared"
+                plans[index].isPrepared = "💛"
             }
             else{
-                plans[index].isPrepared = "Unprepared"
+                plans[index].isPrepared = "💔"
             }
         }
     }

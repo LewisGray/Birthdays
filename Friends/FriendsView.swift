@@ -10,42 +10,47 @@ import SwiftUI
 struct FriendsView: View {
     @EnvironmentObject var birthdayPlanViewModel: BirthdayPlanViewModel
     var body: some View {
+        
         NavigationView{
             
-            ZStack {
-                List{
-                    
-                    ForEach(birthdayPlanViewModel.plans){ plan in
-                        NavigationLink(destination: EditFriendView(friend: plan.BirthdayPerson)){
-                            FriendListRowView(friend: plan.BirthdayPerson)
-                    
-                    
-                    
-                    }
-                    }
-                    .onDelete(perform: birthdayPlanViewModel.delete)
-                    .onMove(perform: birthdayPlanViewModel.move)
+            VStack{
+            List{
+
+                ForEach(birthdayPlanViewModel.plans){ plan in
+                    NavigationLink(destination: EditFriendView(friend: plan.BirthdayPerson)){
+                        FriendListRowView(friend: plan.BirthdayPerson)
+
+
+
                 }
-            
-            .navigationTitle("Friends")
-            //.navigationBarItems(leading: EditButton())
-                
-                NavigationLink(destination: AddFriendView()) {
-                    Image("add")
-                        .resizable()
-                        .scaledToFit()
-                        
-                    
                 }
-                .frame(width: 65.0, height: 65.0)
-                .offset(x:130,y:265)
-                
-               
+                .onDelete(perform: birthdayPlanViewModel.delete)
+                .onMove(perform: birthdayPlanViewModel.move)
                 
                 
-            
                 
             }
+            
+            
+            
+        .navigationBarTitle("Friends",displayMode: .inline)
+        .navigationBarItems(leading: EditButton(), trailing:
+                                NavigationLink("Add",destination:AddFriendView())
+        )
+
+        
+        
+            //NavigationLink(destination: AddFriendView()) {
+                //Image("add")
+                    //.resizable()
+                    //.scaledToFit()
+
+
+            //}
+            //.frame(width: 65.0, height: 65.0)
+            //offset(x:130,y:265)
+            }
+            
         }
     }
 }

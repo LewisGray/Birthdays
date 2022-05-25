@@ -13,10 +13,10 @@ struct FriendListRowView: View{
     
     var body: some View{
         HStack{
-            Image(systemName: "checkmark.circle")
             Text(friend.Name)
-            Text("Age:\(friend.Age)")
             Spacer()
+            Text("Age:\(friend.Age)")
+            
             
         }
         

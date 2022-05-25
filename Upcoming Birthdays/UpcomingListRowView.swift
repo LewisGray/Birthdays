@@ -13,14 +13,14 @@ struct UpcomingListRowView: View{
     
     var body: some View{
         HStack{
-            
             Text(plan.BirthdayPerson.Name)
-            Text(plan.BirthdayPerson.DateOfBirth, style: .date)
             Text(plan.isPrepared)
             Spacer()
+            Text("\(plan.daysUntil) days until")
+                .font(.headline)
             
         }
-        Text("\(plan.daysUntil)")
+        
         
     }
 }

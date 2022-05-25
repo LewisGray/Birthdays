@@ -28,9 +28,7 @@ struct AddFriendView: View {
                     selection: $DateOfBirth,
                     displayedComponents: [.date]
                 )
-                .datePickerStyle(
-                WheelDatePickerStyle()
-                )
+                
             TextField("Bit about them:",text:$BitAboutThem)
                 
             Button(action: SavePressed, label:{
@@ -39,7 +37,7 @@ struct AddFriendView: View {
                     
             )
         }
-        .navigationTitle("✨Add a Friend✨")
+        .navigationBarTitle("✨Add a Friend✨",displayMode: .inline)
         .alert(isPresented: $showAlert, content: getAlert)
     }
     

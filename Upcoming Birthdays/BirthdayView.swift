@@ -18,10 +18,9 @@ struct BirthdayView: View {
     var body: some View {
         VStack{
             Text("🎊 \(birthdayPlan.BirthdayPerson.Name)'s \(birthdayPlan.BirthdayPerson.Age+1) birthday! 🎊")
-            Spacer()
-            Spacer()
+            
             Text("\(getBirthDay(BirthdayPerson:birthdayPlan.BirthdayPerson))")
-            Spacer()
+      
             
             
             Toggle(isOn: $cardSorted){
@@ -43,10 +42,13 @@ struct BirthdayView: View {
             Text("Celebratory plans:")
                 .underline()
             TextEditor(text: $planOfAction)
+                .frame(height: 300)
+                .colorMultiply(.gray)
+                .cornerRadius(10)
                 .onAppear(){
                     planOfAction = birthdayPlan.Plan
                 }
-            
+            Spacer()
             Button(action: SavePressed, label:{
             Text("Save")
             })
