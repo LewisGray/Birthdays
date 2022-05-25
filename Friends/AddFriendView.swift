@@ -23,14 +23,17 @@ struct AddFriendView: View {
     var body: some View {
         ScrollView{
             TextField("Name:",text:$FriendName)
+            Spacer(minLength: 100)
             DatePicker(
                     "Date of Birth:",
                     selection: $DateOfBirth,
                     displayedComponents: [.date]
                 )
-                
-            TextField("Bit about them:",text:$BitAboutThem)
-                
+            Spacer(minLength: 100)
+            Text("Bit about them")
+                .underline()
+            TextEditor(text:$BitAboutThem)
+            Spacer(minLength: 200)
             Button(action: SavePressed, label:{
             Text("Save")
             }

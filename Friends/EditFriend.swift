@@ -28,22 +28,23 @@ struct EditFriendView: View {
                 .onAppear(){
                 FriendName = friend.Name
                 }
+            Spacer(minLength: 100)
             DatePicker(
                     "Date of Birth:",
                     selection: $DateOfBirth,
                     displayedComponents: [.date]
                 )
-                .datePickerStyle(
-                WheelDatePickerStyle()
-                )
                 .onAppear(){
                 DateOfBirth = friend.DateOfBirth
                 }
-            TextField("Bit about them:",text:$BitAboutThem)
+            Spacer(minLength: 100)
+            Text("Bit about them")
+                .underline()
+            TextEditor(text:$BitAboutThem)
                 .onAppear(){
                 BitAboutThem = friend.BitAboutThem
                 }
-                
+            Spacer(minLength: 200)
             Button(action: SavePressed, label:{
             Text("Save")
             }

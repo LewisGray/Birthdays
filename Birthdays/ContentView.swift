@@ -32,7 +32,7 @@ struct ContentView: View {
                 
                 
                 .tabItem {
-                    Image(systemName: "3.square.fill")
+                    Image("exclamationmark")
                     Text("Notification Tests")
                 }
                 .tag(0)
@@ -47,7 +47,7 @@ struct ContentView: View {
                     
                 
                 .tabItem {
-                    Image(systemName: "2.square.fill")
+                    Image("timer")
                     Text("Upcoming")
                 }
               
@@ -64,7 +64,7 @@ struct ContentView: View {
                 
                 
                 .tabItem {
-                    Image(systemName: "1.square.fill")
+                    Image("person")
                     Text("Friends")
                 }
                 .tag(2)
@@ -82,7 +82,7 @@ struct ContentView: View {
                     basicUIVIewRepresentable()
                 }
                 .tabItem {
-                    Image(systemName: "4.square.fill")
+                    Image("calendar")
                     Text("Calendar")
                 }
                 .tag(3)

@@ -34,20 +34,19 @@ struct FriendsView: View {
             
             
         .navigationBarTitle("Friends",displayMode: .inline)
-        .navigationBarItems(leading: EditButton(), trailing:
-                                NavigationLink("Add",destination:AddFriendView())
+        .navigationBarItems(leading: EditButton()
         )
 
         
         
-            //NavigationLink(destination: AddFriendView()) {
-                //Image("add")
-                    //.resizable()
-                    //.scaledToFit()
+            NavigationLink(destination: AddFriendView()) {
+                Image("add")
+                    .resizable()
+                    .scaledToFit()
 
 
-            //}
-            //.frame(width: 65.0, height: 65.0)
+            }
+            .frame(width: 65.0, height: 65.0)
             //offset(x:130,y:265)
             }
             
