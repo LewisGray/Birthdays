@@ -26,7 +26,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="My Birthdays">
                                         <attributes>
-                                            <font key="NSFont" size="68" name=".SFNS-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="68"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>

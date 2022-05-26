@@ -27,15 +27,16 @@ struct FriendsView: View {
                 .onDelete(perform: birthdayPlanViewModel.delete)
                 .onMove(perform: birthdayPlanViewModel.move)
                 
-                
-                
+                //HStack{
+                //Spacer()
+                //Text("<-Swipe to delete")
+            //}
             }
             
             
             
-        .navigationBarTitle("Friends",displayMode: .inline)
-        .navigationBarItems(leading: EditButton()
-        )
+        .navigationBarTitle("😁 Friends 😁",displayMode: .inline)
+        
 
         
         
